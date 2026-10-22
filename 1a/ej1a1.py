@@ -41,7 +41,15 @@ Exemple:
 
 def fibonacci(fibonacci_number):
     # Write here your code
-    pass
+    a, b = 0, 1
+    if type(fibonacci_number) != int or fibonacci_number < 0:
+              raise ValueError("El valor debe ser un entero positivo")
+    if fibonacci_number == 0:
+         return a
+    else:
+        for _ in range(fibonacci_number - 1):
+            a, b = b, a + b
+        return b
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script 
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
