@@ -66,7 +66,13 @@ import numpy as np
 
 def results(list_numbers):
     # Write here your code
-    pass
+    for number in list_numbers:
+        if type(number) != int and type(number) != float:
+            raise ValueError("Los valores deben ser enteros o flotantes, positivos o negativos")
+    avg, standard = np.average(list_numbers), np.std(list_numbers)
+    avg, standard = round(avg, 2), round(standard, 2)
+    print(f"Average: {avg}\nStandard deviation: {standard}")
+    return avg, standard
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script 
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
